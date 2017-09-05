@@ -1,0 +1,52 @@
+
+<html>
+<head>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+var jaTocou = false;
+function promptDownload() {
+if(!jaTocou) {
+alert("Se vocÃª ainda estÃ¡ aqui, entÃ£o gostou da mÃºsica!");
+var downloadBoolean = confirm("Deseja baixÃ¡-la?");
+if(downloadBoolean) {
+alert("Okay! Estou te redirecionando para a pÃ¡gina da mÃºsica. No player que aparecer, clique no sÃ­mbolo de download.");
+document.location.href = 'fundo.mp3';
+} else {
+alert("Okay entÃ£o!");
+}
+jaTocou = true;
+}
+var fundo = document.getElementById("fundo");
+fundo.play();
+
+}
+</script>
+<link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet">
+<style type="text/css">
+        <!--
+        html, body, #tbl_wrap { height: 100%; width: 100%; padding: 0; margin: 0; }
+        #td_wrap { vertical-align: middle; text-align: center; }
+        -->
+        </style>
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<title>Em construÃ§Ã£o!</title>
+<meta content= "O site oficial do SMix." name="description">
+</head>
+<body>
+<audio autoplay=true onended="promptDownload()" id="fundo">
+<source src="fundo.mp3" type="audio/mpeg" onabort="alert('Seu browser preferiu nÃ£o tocar uma musiquinha de fundo... mas okay! :D')">
+Eu ia colocar musiquinha, mas seu browser nÃ£o suporta! :D
+</audio>
+<table id="tbl_wrap">
+<tbody>
+<tr>
+<td id="td_wrap">
+<div style="border: 0px solid black; display: inline-block;">
+<img src="https://cdn.discordapp.com/attachments/278637170531500043/352891770553499648/rainbow.gif" alt="xd" style="width:304px;height:228px;">
+<h1 style="font-family: 'Encode Sans';" contenteditable=true>Este website est&aacute; em constru&ccedil;&atilde;o.</h1>
+</div></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
