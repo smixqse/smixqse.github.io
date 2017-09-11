@@ -10,7 +10,7 @@ alert("Se você ainda está aqui, então gostou da música!");
 var downloadBoolean = confirm("Deseja baixá-la?");
 if(downloadBoolean) {
 alert("Okay! Estou te redirecionando para a página da música. No player que aparecer, clique no símbolo de download.");
-document.location.href = 'https://smixqse.000webhostapp.com/fundo.mp3';
+document.location.href = 'http://smixqse.ga/fundo.mp3';
 } else {
 alert("Okay então!");
 }
@@ -34,7 +34,7 @@ fundo.play();
 </head>
 <body>
 <audio autoplay=true onended="promptDownload()" id="fundo">
-<source src="https://smixqse.000webhostapp.com/fundo.mp3" type="audio/mpeg" onabort="alert('Seu browser preferiu não tocar uma musiquinha de fundo... mas okay! :D')">
+<source src="fundo.mp3" type="audio/mpeg" onabort="alert('Seu browser preferiu não tocar uma musiquinha de fundo... mas okay! :D')">
 Eu ia colocar musiquinha, mas seu browser não suporta! :D
 </audio>
 <table id="tbl_wrap">
