@@ -1,0 +1,57 @@
+<html><head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAotdc_MdwepkImzlZkp9JztozRLiY3mAk",
+        authDomain: "app-teste-do-smix.firebaseapp.com",
+        databaseURL: "https://app-teste-do-smix.firebaseio.com",
+        projectId: "app-teste-do-smix",
+        storageBucket: "app-teste-do-smix.appspot.com",
+        messagingSenderId: "774695544653"
+      };
+      </script>
+      <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-messaging.js"></script>
+
+<script>
+  firebase.initializeApp(config);
+  function register(email, password) {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {alert("registered");
+  // ...
+}, function(error){alert(error.message);});
+  }
+  function logOut() {
+    firebase.auth().signOut().then(function() {
+  $("div").html(`<input type="text" name="emailRegister" id="emailRegister" placeholder="Email">
+    <input type="text" name="passwordRegister" id="passwordRegister" placeholder="Password">
+    <button onclick="register($('#emailRegister').val(), $('#passwordRegister').val());">Register</button>
+
+    <input type="text" name="emailLogin" id="emailLogin" placeholder="Email">
+    <input type="text" name="passwordRegister" id="passwordLogin" placeholder="Password">
+    <button onclick="login($('#emailLogin').val(), $('#passwordLogin').val());">Login</button>`);
+});
+  }
+  function login(email, password) {
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function(){alert("logged in")
+    $("div").html("Hi " + firebase.auth().currentUser.email + " <button onclick='logOut();'>Log Out</button>");}, function(error){alert(error.message)})
+  }
+setTimeout(() => {if(firebase.auth().currentUser != null) {
+    $("div").html("Hi " + firebase.auth().currentUser.email + "<button onclick='logOut();'>Log Out</button>");
+  };}, 500);
+</script>
+    <div>
+    <input type="text" name="emailRegister" id="emailRegister" placeholder="Email">
+    <input type="text" name="passwordRegister" id="passwordRegister" placeholder="Password">
+    <button onclick="register($('#emailRegister').val(), $('#passwordRegister').val());">Register</button>
+
+    <input type="text" name="emailLogin" id="emailLogin" placeholder="Email">
+    <input type="text" name="passwordRegister" id="passwordLogin" placeholder="Password">
+    <button onclick="login($('#emailLogin').val(), $('#passwordLogin').val());">Login</button>
+    </div>
+</body></html>
