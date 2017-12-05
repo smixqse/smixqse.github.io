@@ -1,0 +1,30 @@
+--- 
+layout: default 
+pageName: Blog 
+---
+
+<section class="hero has-text-centered is-medium">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Blog</h1>
+            <h2 class="subtitle">Um blog onde eu posto umas coisinhas.</h2>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="tile is-ancestor">
+    {% for post in site.posts %}
+    <a class="tile notification is-primary" href="{{ post.url }}">
+    <section class="hero">
+    <div class="hero-body">
+    <div class="container">
+    <p class="title">{{ post.title }}</p>
+    <p class="subtitle">{{ post.date | date_to_string }}</p>
+    </div>
+    </div>
+    </section>
+    </a>
+    {% endfor %}
+    </div>
+</section>
