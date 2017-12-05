@@ -1,0 +1,9 @@
+# Site settings
+# {{ site.title }}
+title: SMixqse
+description: O site oficial do SMixqse.
+baseurl: ""
+url: "https://smixqse.ga"
+
+# Build settings
+markdown: kramdown
