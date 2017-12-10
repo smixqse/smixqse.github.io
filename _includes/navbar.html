@@ -11,9 +11,9 @@
     </div>
     <div class="navbar-menu" id="navMenu">
         <div class="navbar-start">
-            <a href="https://www.smixqse.ga/" class="navbar-item" {% if page.pageName == 'Home' %}style="color:#4286f4;"{% endif %}>Home</a>
-            <a href="http://www.smixqse.ga/sobre" class="navbar-item" {% if page.pageName == 'Sobre' %}style="color:#4286f4;"{% endif %}>Sobre</a>
-            <a href="http://www.smixqse.ga/blog" class="navbar-item" {% if page.pageName == 'Blog' %}style="color:#4286f4;"{% endif %}>Blog</a>
+            <a href="{{ site.url }}/" class="navbar-item" {% if page.pageName == 'Home' %}style="color:#4286f4;"{% endif %}>Home</a>
+            <a href="{{ site.url }}/sobre" class="navbar-item" {% if page.pageName == 'Sobre' %}style="color:#4286f4;"{% endif %}>Sobre</a>
+            <a href="{{ site.url }}/blog" class="navbar-item" {% if page.pageName == 'Blog' %}style="color:#4286f4;"{% endif %}>Blog</a>
         </div>
         <div class="navbar-end">
             <div class="navbar-item">
